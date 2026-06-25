@@ -1,6 +1,5 @@
 # WeatherEvent Pro
 
-Aplicação full-stack para gerenciamento de eventos climáticos, com backend em **Laravel** e frontend em **Vue 3**.
 
 ## Stack
 
