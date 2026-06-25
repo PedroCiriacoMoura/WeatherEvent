@@ -1,0 +1,90 @@
+services:
+
+  app:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: weather-api
+    restart: unless-stopped
+    working_dir: /var/www
+    env_file:
+      - ./backend/.env
+    volumes:
+      - ./backend:/var/www
+    depends_on:
+      mysql:
+        condition: service_started
+      redis:
+        condition: service_started
+    networks:
+      - weather-network
+
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: weather-front
+    restart: unless-stopped
+    env_file:
+      - ./frontend/.env
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    depends_on:
+      - app
+    networks:
+      - weather-network
+
+
+  nginx:
+    image: nginx:alpine
+    container_name: weather-nginx
+    restart: unless-stopped
+    ports:
+      - "8000:80"
+    volumes:
+      - ./backend:/var/www
+      - ./docker/nginx:/etc/nginx/conf.d
+    depends_on:
+      - app
+    networks:
+      - weather-network
+
+
+  mysql:
+    image: mysql:8.4
+    container_name: weather-mysql
+    restart: unless-stopped
+    env_file:
+      - ./docker/mysql.env
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - weather-network
+
+
+  redis:
+    image: redis:7-alpine
+    container_name: weather-redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - weather-network
+
+
+volumes:
+  mysql_data:
+  redis_data:
+
+
+networks:
+  weather-network:
+    driver: bridge
