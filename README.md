@@ -1,5 +1,5 @@
 # WeatherEvent Pro
-
+Plataforma de gerenciamento de eventos com análise inteligente de condições climáticas.
 
 ## Stack
 
@@ -51,12 +51,25 @@ Na primeira execução, o backend automaticamente:
 
 ## Acessos
 
-| Serviço    | URL                        |
-|------------|----------------------------|
-| Frontend   | http://localhost:5173      |
-| API/Backend| http://localhost:8000      |
-| MySQL      | localhost:3306             |
-| Redis      | localhost:6379             |
+| Serviço       | URL                                     |
+|---------------|-----------------------------------------|
+| Frontend      | http://localhost:5173                   |
+| API / Backend | http://localhost:8000                   |
+| Swagger UI    | http://localhost:8000/api/documentation |
+| MySQL         | localhost:3306                          |
+| Redis         | localhost:6379                          |
+
+---
+
+## Documentação da API (Swagger)
+
+Em desenvolvimento a documentação é gerada automaticamente a cada requisição.
+
+Para gerar manualmente após criar ou alterar endpoints:
+
+```bash
+docker compose exec app php artisan l5-swagger:generate
+```
 
 ---
 
@@ -87,7 +100,7 @@ docker compose down -v
 ## Estrutura do projeto
 
 ```
-WeatherEvent-Pro/
+WeatherEvent/
 ├── backend/          # API Laravel (PHP-FPM)
 ├── frontend/         # SPA Vue 3 + Vite
 ├── docker/
