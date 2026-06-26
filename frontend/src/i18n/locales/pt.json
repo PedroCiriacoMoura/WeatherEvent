@@ -1,0 +1,24 @@
+{
+  "app": {
+    "name": "Weather Event",
+    "tagline": "Acompanhe eventos climáticos em tempo real"
+  },
+  "nav": {
+    "home": "Início",
+    "dashboard": "Painel",
+    "settings": "Configurações"
+  },
+  "common": {
+    "loading": "Carregando...",
+    "save": "Salvar",
+    "cancel": "Cancelar",
+    "search": "Pesquisar",
+    "refresh": "Atualizar"
+  },
+  "language": {
+    "label": "Idioma",
+    "en": "Inglês",
+    "pt": "Português",
+    "es": "Espanhol"
+  }
+}

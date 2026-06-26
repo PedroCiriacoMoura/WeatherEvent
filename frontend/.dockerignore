@@ -1,0 +1,16 @@
+# Git / editor
+.git
+.gitignore
+.editorconfig
+
+# Installed in the container by `npm install`; copying the host's (Windows)
+# node_modules over it would ship platform-wrong native binaries (Vite/Rolldown).
+node_modules
+
+# Build output
+dist
+dist-ssr
+
+# Logs / caches
+*.log
+.eslintcache

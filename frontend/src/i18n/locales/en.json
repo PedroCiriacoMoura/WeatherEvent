@@ -1,0 +1,24 @@
+{
+  "app": {
+    "name": "Weather Event",
+    "tagline": "Track weather events in real time"
+  },
+  "nav": {
+    "home": "Home",
+    "dashboard": "Dashboard",
+    "settings": "Settings"
+  },
+  "common": {
+    "loading": "Loading...",
+    "save": "Save",
+    "cancel": "Cancel",
+    "search": "Search",
+    "refresh": "Refresh"
+  },
+  "language": {
+    "label": "Language",
+    "en": "English",
+    "pt": "Portuguese",
+    "es": "Spanish"
+  }
+}
