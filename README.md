@@ -73,6 +73,21 @@ docker compose exec app php artisan l5-swagger:generate
 
 ---
 
+## Testes
+
+```bash
+# Rodar todos os testes
+docker compose exec app php artisan test
+
+# Rodar apenas um arquivo (ex.: autenticação)
+docker compose exec app php artisan test --filter=AuthTest
+
+# Rodar um único teste pelo nome
+docker compose exec app php artisan test --filter=test_user_can_login_with_valid_credentials
+```
+
+---
+
 ## Comandos úteis
 
 ```bash
