@@ -1,7 +1,7 @@
 {
   "app": {
     "name": "Weather Event",
-    "tagline": "Sigue los eventos meteorológicos en tiempo real"
+    "tagline": "Gestión de eventos con alertas meteorológicas inteligentes"
   },
   "nav": {
     "home": "Inicio",
@@ -20,5 +20,87 @@
     "en": "Inglés",
     "pt": "Portugués",
     "es": "Español"
+  },
+  "theme": {
+    "toggle": "Cambiar tema",
+    "light": "Claro",
+    "dark": "Oscuro",
+    "system": "Sistema"
+  },
+  "auth": {
+    "brand": {
+      "headline": "Organiza eventos que el clima no pueda sorprender.",
+      "subheadline": "Gestiona todos tus eventos en un solo lugar y deja que las alertas meteorológicas inteligentes avisen a tu equipo antes de que el tiempo cambie.",
+      "feature1": "Todos tus eventos, agendas y lugares en un solo lugar",
+      "feature2": "Alertas meteorológicas inteligentes a la medida de cada evento",
+      "feature3": "Actúa con antelación con notificaciones de riesgo en tiempo real",
+      "footer": "Con la confianza de equipos de eventos que planifican para cualquier pronóstico."
+    },
+    "login": {
+      "title": "Bienvenido de nuevo",
+      "subtitle": "Inicia sesión en tu cuenta para continuar.",
+      "submit": "Iniciar sesión",
+      "submitting": "Iniciando sesión...",
+      "noAccount": "¿No tienes una cuenta?",
+      "createOne": "Crea una"
+    },
+    "register": {
+      "title": "Crea tu cuenta",
+      "subtitle": "Empieza a gestionar tus eventos en minutos.",
+      "submit": "Crear cuenta",
+      "submitting": "Creando cuenta...",
+      "passwordHint": "Usa al menos 8 caracteres.",
+      "haveAccount": "¿Ya tienes una cuenta?",
+      "signIn": "Iniciar sesión"
+    },
+    "fields": {
+      "name": "Nombre completo",
+      "email": "Correo electrónico",
+      "password": "Contraseña",
+      "confirmPassword": "Confirmar contraseña"
+    },
+    "placeholders": {
+      "name": "Juana Pérez",
+      "email": "tu{'@'}empresa.com",
+      "password": "••••••••",
+      "confirmPassword": "••••••••"
+    },
+    "password": {
+      "show": "Mostrar contraseña",
+      "hide": "Ocultar contraseña"
+    },
+    "strength": {
+      "label": "Seguridad de la contraseña",
+      "veryWeak": "Muy débil",
+      "weak": "Débil",
+      "fair": "Aceptable",
+      "good": "Buena",
+      "strong": "Fuerte"
+    },
+    "profile": {
+      "title": "Perfil",
+      "subtitle": "Los datos de tu cuenta.",
+      "email": "Correo electrónico",
+      "memberSince": "Miembro desde",
+      "signOut": "Cerrar sesión",
+      "signingOut": "Cerrando sesión..."
+    },
+    "validation": {
+      "required": "Este campo es obligatorio.",
+      "email": "Introduce un correo electrónico válido.",
+      "minLength": "Debe tener al menos {min} caracteres.",
+      "maxLength": "Debe tener como máximo {max} caracteres.",
+      "passwordsDontMatch": "Las contraseñas no coinciden.",
+      "emailTaken": "Este correo ya está registrado."
+    },
+    "toast": {
+      "welcomeBack": "¡Bienvenido de nuevo, {name}!",
+      "accountCreated": "¡Tu cuenta ha sido creada!",
+      "signedOut": "Has cerrado sesión.",
+      "invalidCredentials": "Correo o contraseña inválidos.",
+      "tooManyAttempts": "Demasiados intentos. Inténtalo de nuevo en un minuto.",
+      "networkError": "Error de red. Verifica tu conexión e inténtalo de nuevo.",
+      "genericError": "Algo salió mal. Inténtalo de nuevo."
+    }
   }
 }

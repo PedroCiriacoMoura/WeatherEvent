@@ -75,6 +75,8 @@ docker compose exec app php artisan l5-swagger:generate
 
 ## Testes
 
+### Backend
+
 ```bash
 # Rodar todos os testes
 docker compose exec app php artisan test
@@ -85,6 +87,26 @@ docker compose exec app php artisan test --filter=AuthTest
 # Rodar um único teste pelo nome
 docker compose exec app php artisan test --filter=test_user_can_login_with_valid_credentials
 ```
+
+### Frontend
+
+```bash
+# Rodar todos os testes uma vez (Vitest)
+docker compose exec frontend npm run test:unit -- --run
+
+# Modo watch (re-roda ao salvar)
+docker compose exec frontend npm run test:unit
+
+# Rodar apenas um arquivo (ex.: validators)
+docker compose exec frontend npm run test:unit -- --run validators
+
+# Verificação de tipos e lint
+docker compose exec frontend npm run type-check
+docker compose exec frontend npm run lint
+```
+
+> Sem Docker, rode os mesmos comandos dentro de `frontend/` (após `npm install`),
+> por exemplo: `npm run test:unit -- --run`.
 
 ---
 

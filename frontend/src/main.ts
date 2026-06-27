@@ -5,7 +5,10 @@ import VueApexCharts from 'vue3-apexcharts'
 import App from './App.vue'
 import router from './router'
 import i18n from './i18n'
+import { initTheme } from './composables/useTheme'
 import './style.css'
+
+initTheme()
 
 const app = createApp(App)
 

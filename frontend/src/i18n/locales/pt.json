@@ -1,7 +1,7 @@
 {
   "app": {
     "name": "Weather Event",
-    "tagline": "Acompanhe eventos climáticos em tempo real"
+    "tagline": "Gestão de eventos com alertas climáticos inteligentes"
   },
   "nav": {
     "home": "Início",
@@ -20,5 +20,87 @@
     "en": "Inglês",
     "pt": "Português",
     "es": "Espanhol"
+  },
+  "theme": {
+    "toggle": "Alternar tema",
+    "light": "Claro",
+    "dark": "Escuro",
+    "system": "Sistema"
+  },
+  "auth": {
+    "brand": {
+      "headline": "Planeje eventos que o clima não pega de surpresa.",
+      "subheadline": "Gerencie todos os seus eventos em um só lugar e deixe os alertas climáticos inteligentes avisarem sua equipe antes de o tempo virar.",
+      "feature1": "Todos os seus eventos, agendas e locais em um só lugar",
+      "feature2": "Alertas climáticos inteligentes sob medida para cada evento",
+      "feature3": "Aja com antecedência com notificações de risco em tempo real",
+      "footer": "Usado por equipes de eventos que se preparam para qualquer previsão."
+    },
+    "login": {
+      "title": "Bem-vindo de volta",
+      "subtitle": "Entre na sua conta para continuar.",
+      "submit": "Entrar",
+      "submitting": "Entrando...",
+      "noAccount": "Não tem uma conta?",
+      "createOne": "Crie uma"
+    },
+    "register": {
+      "title": "Crie sua conta",
+      "subtitle": "Comece a gerenciar seus eventos em minutos.",
+      "submit": "Criar conta",
+      "submitting": "Criando conta...",
+      "passwordHint": "Use pelo menos 8 caracteres.",
+      "haveAccount": "Já tem uma conta?",
+      "signIn": "Entrar"
+    },
+    "fields": {
+      "name": "Nome completo",
+      "email": "E-mail",
+      "password": "Senha",
+      "confirmPassword": "Confirmar senha"
+    },
+    "placeholders": {
+      "name": "Maria Silva",
+      "email": "voce{'@'}empresa.com",
+      "password": "••••••••",
+      "confirmPassword": "••••••••"
+    },
+    "password": {
+      "show": "Mostrar senha",
+      "hide": "Ocultar senha"
+    },
+    "strength": {
+      "label": "Força da senha",
+      "veryWeak": "Muito fraca",
+      "weak": "Fraca",
+      "fair": "Razoável",
+      "good": "Boa",
+      "strong": "Forte"
+    },
+    "profile": {
+      "title": "Perfil",
+      "subtitle": "Os dados da sua conta.",
+      "email": "Endereço de e-mail",
+      "memberSince": "Membro desde",
+      "signOut": "Sair",
+      "signingOut": "Saindo..."
+    },
+    "validation": {
+      "required": "Este campo é obrigatório.",
+      "email": "Informe um e-mail válido.",
+      "minLength": "Deve ter pelo menos {min} caracteres.",
+      "maxLength": "Deve ter no máximo {max} caracteres.",
+      "passwordsDontMatch": "As senhas não coincidem.",
+      "emailTaken": "Este e-mail já está cadastrado."
+    },
+    "toast": {
+      "welcomeBack": "Bem-vindo de volta, {name}!",
+      "accountCreated": "Sua conta foi criada!",
+      "signedOut": "Você saiu da sua conta.",
+      "invalidCredentials": "E-mail ou senha inválidos.",
+      "tooManyAttempts": "Muitas tentativas. Tente novamente em um minuto.",
+      "networkError": "Erro de rede. Verifique sua conexão e tente novamente.",
+      "genericError": "Algo deu errado. Tente novamente."
+    }
   }
 }
