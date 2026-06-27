@@ -1,0 +1,21 @@
+# Git / editor
+.git
+.gitignore
+.gitattributes
+.editorconfig
+
+# Local environment (provided via compose `env_file` + bind mount at runtime)
+.env
+
+# Dependencies — installed inside the container by docker-entrypoint.sh
+/vendor
+/node_modules
+
+# Laravel storage symlink: its target is an absolute in-container path
+# (/var/www/storage/app/public), so on the host it is a broken/invalid symlink
+# that breaks the Docker build context. It is recreated at startup by
+# `php artisan storage:link` in docker-entrypoint.sh.
+public/storage
+
+# Test/tooling artifacts
+.phpunit.result.cache
