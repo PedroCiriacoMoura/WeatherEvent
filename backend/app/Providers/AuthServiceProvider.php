@@ -2,6 +2,10 @@
 
 namespace App\Providers;
 
+use App\Models\Alert;
+use App\Models\Event;
+use App\Policies\AlertPolicy;
+use App\Policies\EventPolicy;
 // use Illuminate\Support\Facades\Gate;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 
@@ -13,7 +17,8 @@ class AuthServiceProvider extends ServiceProvider
      * @var array<class-string, class-string>
      */
     protected $policies = [
-        //
+        Event::class => EventPolicy::class,
+        Alert::class => AlertPolicy::class,
     ];
 
     /**

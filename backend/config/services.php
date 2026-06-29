@@ -31,4 +31,13 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'openweather' => [
+        'key' => env('OPENWEATHER_API_KEY'),
+        'base_url' => env('OPENWEATHER_BASE_URL', 'https://api.openweathermap.org'),
+        'units' => env('OPENWEATHER_UNITS', 'metric'),
+        'language' => env('OPENWEATHER_LANGUAGE', 'en'),
+        'timeout' => (int) env('OPENWEATHER_TIMEOUT', 10),
+        'cache_ttl' => (int) env('OPENWEATHER_CACHE_TTL', 3600),
+    ],
+
 ];
