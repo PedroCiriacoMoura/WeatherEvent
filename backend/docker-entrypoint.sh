@@ -29,7 +29,9 @@ done
 
 
 # APP KEY
-php artisan key:generate --force
+if ! grep -q '^APP_KEY=base64:' .env 2>/dev/null; then
+    php artisan key:generate --force
+fi
 
 
 # Migrations
@@ -45,10 +47,11 @@ php artisan storage:link || true
 
 
 # Cache
-
 php artisan optimize:clear
-php artisan config:cache
-php artisan route:cache
+if [ "$APP_ENV" = "production" ]; then
+    php artisan config:cache
+    php artisan route:cache
+fi
 
 chmod -R 777 storage
 chmod -R 777 bootstrap/cache
