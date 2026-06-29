@@ -5,7 +5,6 @@ namespace Tests\Feature;
 use App\Models\User;
 use App\Services\AuthService;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Laravel\Sanctum\Sanctum;
 use Tests\TestCase;
 
 class AuthTest extends TestCase
@@ -33,7 +32,6 @@ class AuthTest extends TestCase
             ->assertJsonPath('user.email', 'maria@weatherevent.com');
 
         $this->assertDatabaseHas('users', ['email' => 'maria@weatherevent.com']);
-        $this->assertDatabaseCount('personal_access_tokens', 2); 
     }
 
     public function test_register_validates_input(): void
@@ -96,11 +94,10 @@ class AuthTest extends TestCase
 
     public function test_authenticated_user_can_access_me(): void
     {
-        $user = User::factory()->create();
+        ['user' => $user, 'access_token' => $access] = $this->authenticate();
 
-        Sanctum::actingAs($user, [AuthService::ACCESS_ABILITY]);
-
-        $this->getJson('/api/me')
+        $this->withHeader('Authorization', 'Bearer '.$access)
+            ->getJson('/api/me')
             ->assertOk()
             ->assertJsonPath('data.id', $user->id)
             ->assertJsonPath('data.email', $user->email);
@@ -114,14 +111,11 @@ class AuthTest extends TestCase
     public function test_logout_revokes_the_session_tokens(): void
     {
         ['access_token' => $access] = $this->authenticate();
-        $this->assertDatabaseCount('personal_access_tokens', 2);
 
         $this->withHeader('Authorization', 'Bearer '.$access)
             ->postJson('/api/logout')
             ->assertOk()
             ->assertJsonPath('message', 'Logout realizado com sucesso.');
-
-        $this->assertDatabaseCount('personal_access_tokens', 0);
 
         $this->forgetGuards();
         $this->withHeader('Authorization', 'Bearer '.$access)
@@ -150,8 +144,6 @@ class AuthTest extends TestCase
         $this->forgetGuards();
         $this->withHeader('Authorization', 'Bearer '.$refresh)
             ->postJson('/api/refresh')->assertUnauthorized();
-
-        $this->assertDatabaseCount('personal_access_tokens', 2);
     }
 
     public function test_access_token_cannot_be_used_to_refresh(): void
@@ -210,5 +202,6 @@ class AuthTest extends TestCase
     private function forgetGuards(): void
     {
         $this->app['auth']->forgetGuards();
+        $this->app['tymon.jwt']->unsetToken();
     }
 }

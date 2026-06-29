@@ -25,8 +25,8 @@ use OpenApi\Attributes as OA;
     securityScheme: 'sanctum',
     type: 'http',
     scheme: 'bearer',
-    bearerFormat: 'Token',
-    description: 'Token de autenticação Sanctum. Obtenha via POST /api/login.'
+    bearerFormat: 'JWT',
+    description: 'Access token JWT (Bearer). Obtenha via POST /api/login e renove via POST /api/refresh.'
 )]
 class Controller extends BaseController
 {
