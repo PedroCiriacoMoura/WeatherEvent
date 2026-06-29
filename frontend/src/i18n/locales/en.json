@@ -1,0 +1,106 @@
+{
+  "app": {
+    "name": "Weather Event",
+    "tagline": "Event management with intelligent weather alerts"
+  },
+  "nav": {
+    "home": "Home",
+    "dashboard": "Dashboard",
+    "settings": "Settings"
+  },
+  "common": {
+    "loading": "Loading...",
+    "save": "Save",
+    "cancel": "Cancel",
+    "search": "Search",
+    "refresh": "Refresh"
+  },
+  "language": {
+    "label": "Language",
+    "en": "English",
+    "pt": "Portuguese",
+    "es": "Spanish"
+  },
+  "theme": {
+    "toggle": "Toggle theme",
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System"
+  },
+  "auth": {
+    "brand": {
+      "headline": "Plan events the weather can't catch off guard.",
+      "subheadline": "Manage every event in one place and let intelligent weather alerts warn your team before conditions turn.",
+      "feature1": "All your events, schedules and venues in one place",
+      "feature2": "Intelligent weather alerts tailored to each event",
+      "feature3": "Act early with real-time risk notifications",
+      "footer": "Trusted by event teams who plan for any forecast."
+    },
+    "login": {
+      "title": "Welcome back",
+      "subtitle": "Sign in to your account to continue.",
+      "submit": "Sign in",
+      "submitting": "Signing in...",
+      "noAccount": "Don't have an account?",
+      "createOne": "Create one"
+    },
+    "register": {
+      "title": "Create your account",
+      "subtitle": "Start managing your events in minutes.",
+      "submit": "Create account",
+      "submitting": "Creating account...",
+      "passwordHint": "Use at least 8 characters.",
+      "haveAccount": "Already have an account?",
+      "signIn": "Sign in"
+    },
+    "fields": {
+      "name": "Full name",
+      "email": "Email",
+      "password": "Password",
+      "confirmPassword": "Confirm password"
+    },
+    "placeholders": {
+      "name": "Jane Doe",
+      "email": "you{'@'}company.com",
+      "password": "••••••••",
+      "confirmPassword": "••••••••"
+    },
+    "password": {
+      "show": "Show password",
+      "hide": "Hide password"
+    },
+    "strength": {
+      "label": "Password strength",
+      "veryWeak": "Very weak",
+      "weak": "Weak",
+      "fair": "Fair",
+      "good": "Good",
+      "strong": "Strong"
+    },
+    "profile": {
+      "title": "Profile",
+      "subtitle": "Your account details.",
+      "email": "Email address",
+      "memberSince": "Member since",
+      "signOut": "Sign out",
+      "signingOut": "Signing out..."
+    },
+    "validation": {
+      "required": "This field is required.",
+      "email": "Enter a valid email address.",
+      "minLength": "Must be at least {min} characters.",
+      "maxLength": "Must be at most {max} characters.",
+      "passwordsDontMatch": "Passwords do not match.",
+      "emailTaken": "This email is already registered."
+    },
+    "toast": {
+      "welcomeBack": "Welcome back, {name}!",
+      "accountCreated": "Your account has been created!",
+      "signedOut": "You have been signed out.",
+      "invalidCredentials": "Invalid email or password.",
+      "tooManyAttempts": "Too many attempts. Please try again in a minute.",
+      "networkError": "Network error. Check your connection and try again.",
+      "genericError": "Something went wrong. Please try again."
+    }
+  }
+}

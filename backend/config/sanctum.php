@@ -50,6 +50,21 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Access / Refresh Token TTL (minutos)
+    |--------------------------------------------------------------------------
+    |
+    | Tempo de vida (em minutos) aplicado individualmente a cada token via
+    | "expires_at". O access token é curto; o refresh token é longo e sustenta
+    | a funcionalidade de "manter conectado".
+    |
+    */
+
+    'access_token_expiration' => (int) env('SANCTUM_ACCESS_TOKEN_TTL', 60),
+
+    'refresh_token_expiration' => (int) env('SANCTUM_REFRESH_TOKEN_TTL', 20160), // 14 dias
+
+    /*
+    |--------------------------------------------------------------------------
     | Token Prefix
     |--------------------------------------------------------------------------
     |
