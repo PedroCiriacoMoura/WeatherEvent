@@ -3,14 +3,18 @@
 namespace App\Services;
 
 use App\Models\User;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 use Illuminate\Validation\ValidationException;
+use PHPOpenSourceSaver\JWTAuth\Facades\JWTAuth;
 
 class AuthService
 {
-    public const ACCESS_ABILITY = 'access-api';
-    public const REFRESH_ABILITY = 'refresh-api';
+    public const TYPE_ACCESS = 'access';
+    public const TYPE_REFRESH = 'refresh';
+
+    private const REVOKED_SESSION_PREFIX = 'jwt:revoked:';
 
     /**
      * Registra um novo usuário e emite o par de tokens (access + refresh).
@@ -58,7 +62,7 @@ class AuthService
      */
     public function refresh(User $user): array
     {
-        $this->revokeCurrentSession($user);
+        $this->revokeCurrentSession();
 
         return $this->issueTokens($user);
     }
@@ -68,31 +72,30 @@ class AuthService
      */
     public function logout(User $user): void
     {
-        $this->revokeCurrentSession($user);
+        $this->revokeCurrentSession();
     }
 
     /**
-     * Emite um par access/refresh vinculado por um grupo de sessão.
+     * Indica se a sessão (claim "sid") foi revogada via logout ou rotação.
+     */
+    public static function sessionIsRevoked(string $sid): bool
+    {
+        return Cache::has(self::REVOKED_SESSION_PREFIX.$sid);
+    }
+
+    /**
+     * Emite um par access/refresh de JWTs vinculados por um "sid" de sessão.
      *
      * @return array{user: User, access_token: string, refresh_token: string, expires_in: int}
      */
     private function issueTokens(User $user): array
     {
-        $group = (string) Str::uuid();
-        $accessTtl = (int) config('sanctum.access_token_expiration');
-        $refreshTtl = (int) config('sanctum.refresh_token_expiration');
+        $sid = (string) Str::uuid();
+        $accessTtl = (int) config('jwt.access_token_ttl');
+        $refreshTtl = (int) config('jwt.refresh_token_ttl');
 
-        $accessToken = $user->createToken(
-            $group.':access',
-            [self::ACCESS_ABILITY],
-            now()->addMinutes($accessTtl)
-        )->plainTextToken;
-
-        $refreshToken = $user->createToken(
-            $group.':refresh',
-            [self::REFRESH_ABILITY],
-            now()->addMinutes($refreshTtl)
-        )->plainTextToken;
+        $accessToken = $this->makeToken($user, self::TYPE_ACCESS, $sid, $accessTtl);
+        $refreshToken = $this->makeToken($user, self::TYPE_REFRESH, $sid, $refreshTtl);
 
         return [
             'user' => $user,
@@ -103,12 +106,31 @@ class AuthService
     }
 
     /**
-     * Remove todos os tokens (access + refresh) do grupo de sessão atual.
+     * Gera um JWT com os claims "type" e "sid" e o TTL informado (em minutos).
      */
-    private function revokeCurrentSession(User $user): void
+    private function makeToken(User $user, string $type, string $sid, int $ttlMinutes): string
     {
-        $group = Str::before($user->currentAccessToken()->name, ':');
+        JWTAuth::factory()->setTTL($ttlMinutes);
 
-        $user->tokens()->where('name', 'like', $group.':%')->delete();
+        return JWTAuth::customClaims([
+            'type' => $type,
+            'sid' => $sid,
+        ])->fromUser($user);
+    }
+
+    /**
+     * Adiciona o "sid" do token da requisição atual à blacklist de sessão,
+     * invalidando o par (access + refresh) até o fim do TTL do refresh.
+     */
+    private function revokeCurrentSession(): void
+    {
+        $sid = (string) JWTAuth::setRequest(request())->parseToken()->getPayload()->get('sid');
+        $refreshTtl = (int) config('jwt.refresh_token_ttl');
+
+        Cache::put(
+            self::REVOKED_SESSION_PREFIX.$sid,
+            true,
+            now()->addMinutes($refreshTtl)
+        );
     }
 }

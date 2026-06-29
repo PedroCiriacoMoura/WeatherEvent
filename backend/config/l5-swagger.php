@@ -67,7 +67,7 @@ return [
             'middleware' => [
                 'api' => [],
                 'asset' => [],
-                'docs' => env('APP_ENV') === 'production' ? ['auth:sanctum'] : [],
+                'docs' => env('APP_ENV') === 'production' ? ['auth:api', 'token.type:access'] : [],
                 'oauth2_callback' => [],
             ],
 
@@ -195,9 +195,9 @@ return [
 
                 'sanctum' => [
                     'type' => 'http',
-                    'description' => 'Autenticação via Bearer Token (Laravel Sanctum). Formato: Bearer {token}',
+                    'description' => 'Autenticação via Bearer Token (JWT). Formato: Bearer {token}',
                     'scheme' => 'bearer',
-                    'bearerFormat' => 'Token',
+                    'bearerFormat' => 'JWT',
                 ],
             ],
             'security' => [
