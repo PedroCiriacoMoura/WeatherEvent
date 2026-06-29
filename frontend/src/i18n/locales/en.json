@@ -6,14 +6,37 @@
   "nav": {
     "home": "Home",
     "dashboard": "Dashboard",
-    "settings": "Settings"
+    "events": "Events",
+    "profile": "Profile",
+    "settings": "Settings",
+    "primary": "Primary navigation",
+    "breadcrumb": "Breadcrumb",
+    "collapse": "Collapse sidebar",
+    "expand": "Expand sidebar",
+    "openMenu": "Open menu"
   },
   "common": {
     "loading": "Loading...",
     "save": "Save",
+    "saving": "Saving...",
     "cancel": "Cancel",
+    "confirm": "Confirm",
     "search": "Search",
-    "refresh": "Refresh"
+    "searchEvents": "Search events...",
+    "clear": "Clear",
+    "refresh": "Refresh",
+    "retry": "Try again",
+    "previous": "Previous",
+    "next": "Next",
+    "pagination": "Pagination",
+    "empty": {
+      "title": "Nothing here yet",
+      "chart": "No data to display for this period."
+    },
+    "error": {
+      "title": "Something went wrong",
+      "message": "We couldn't load this content. Please try again."
+    }
   },
   "language": {
     "label": "Language",
@@ -102,5 +125,165 @@
       "networkError": "Network error. Check your connection and try again.",
       "genericError": "Something went wrong. Please try again."
     }
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "subtitle": "An overview of your events and weather risk.",
+    "stats": {
+      "totalEvents": "Total Events",
+      "totalEventsHint": "All events you have created.",
+      "upcomingEvents": "Upcoming Events",
+      "upcomingEventsHint": "Events scheduled to start in the future.",
+      "criticalEvents": "Critical Events",
+      "criticalEventsHint": "Upcoming events with a poor or hazardous weather outlook.",
+      "averageTemperature": "Avg. Temperature",
+      "averageTemperatureHint": "Average current temperature across your upcoming events.",
+      "vsLastPeriod": "vs last period"
+    },
+    "charts": {
+      "temperature": "Temperature",
+      "rain": "Rain",
+      "humidity": "Humidity",
+      "temperatureTitle": "Temperature outlook",
+      "rainTitle": "Expected rainfall",
+      "humidityTitle": "Humidity",
+      "riskTitle": "Weather risk distribution"
+    },
+    "upcoming": {
+      "title": "Upcoming events",
+      "viewAll": "View all",
+      "emptyTitle": "No upcoming events",
+      "emptyDescription": "Create an event to see it here."
+    }
+  },
+  "events": {
+    "list": {
+      "title": "Events",
+      "subtitle": "Browse, filter and manage all your events.",
+      "create": "New event",
+      "searchPlaceholder": "Search by event name...",
+      "emptyTitle": "No events found",
+      "emptyDescription": "Try adjusting your filters, or create a new event.",
+      "resultsCount": "Showing {from}–{to} of {total}"
+    },
+    "create": {
+      "title": "Create event",
+      "subtitle": "Add a new event and its location.",
+      "submit": "Create event"
+    },
+    "edit": {
+      "title": "Edit event",
+      "subtitle": "Update this event's details.",
+      "submit": "Save changes"
+    },
+    "detail": {
+      "breadcrumb": "Details",
+      "back": "Back to events",
+      "summary": "Summary",
+      "weather": "Current weather",
+      "forecast": "Forecast",
+      "healthScore": "Weather health score",
+      "recommendations": "Recommendations",
+      "alerts": "Alerts",
+      "points": "pts",
+      "edit": "Edit",
+      "delete": "Delete",
+      "deleteTitle": "Delete event",
+      "deleteConfirm": "Are you sure you want to delete \"{name}\"? This action cannot be undone."
+    },
+    "fields": {
+      "name": "Event name",
+      "status": "Status",
+      "category": "Category",
+      "type": "Type",
+      "location": "Location",
+      "city": "City",
+      "country": "Country",
+      "latitude": "Latitude",
+      "longitude": "Longitude",
+      "startsAt": "Starts at",
+      "endsAt": "Ends at",
+      "timezone": "Timezone",
+      "attendees": "Attendees",
+      "description": "Description",
+      "isOutdoor": "This is an outdoor event"
+    },
+    "placeholders": {
+      "category": "Select a category",
+      "status": "Select a status",
+      "description": "Add a short description..."
+    },
+    "hints": {
+      "country": "Two-letter country code (e.g. PT, US)."
+    },
+    "validation": {
+      "categoryRequired": "Please select a category.",
+      "statusRequired": "Please select a status.",
+      "nameRequired": "Event name is required.",
+      "nameMax": "Name must be at most 255 characters.",
+      "cityRequired": "City is required.",
+      "countryFormat": "Use a two-letter country code.",
+      "latitude": "Enter a latitude between -90 and 90.",
+      "longitude": "Enter a longitude between -180 and 180.",
+      "startsAtRequired": "Start date and time is required.",
+      "endsAfterStart": "End must be after the start.",
+      "attendees": "Attendees must be a positive whole number."
+    },
+    "status": {
+      "draft": "Draft",
+      "published": "Published",
+      "cancelled": "Cancelled",
+      "completed": "Completed"
+    },
+    "rating": {
+      "excellent": "Excellent",
+      "good": "Good",
+      "fair": "Fair",
+      "poor": "Poor",
+      "hazardous": "Hazardous"
+    },
+    "factors": {
+      "temperature": "Temperature",
+      "wind": "Wind",
+      "precipitation": "Precipitation",
+      "airQuality": "Air quality"
+    },
+    "filters": {
+      "allCategories": "All categories",
+      "allStatuses": "All statuses",
+      "allTypes": "All types",
+      "outdoor": "Outdoor",
+      "indoor": "Indoor",
+      "clear": "Clear filters"
+    },
+    "weather": {
+      "feelsLike": "Feels like",
+      "humidity": "Humidity",
+      "wind": "Wind",
+      "pressure": "Pressure",
+      "unavailable": "Weather data is currently unavailable."
+    },
+    "forecast": {
+      "empty": "No forecast available for this event window."
+    },
+    "alerts": {
+      "emptyTitle": "No alerts",
+      "emptyDescription": "There are no weather alerts for this event."
+    },
+    "toast": {
+      "created": "Event created successfully.",
+      "createError": "Could not create the event.",
+      "updated": "Event updated successfully.",
+      "updateError": "Could not update the event.",
+      "deleted": "Event deleted.",
+      "deleteError": "Could not delete the event."
+    }
+  },
+  "alerts": {
+    "title": "Notifications",
+    "markAllRead": "Mark all read",
+    "empty": "You're all caught up.",
+    "generic": "Weather alert",
+    "unread": "Unread"
   }
 }

@@ -6,14 +6,37 @@
   "nav": {
     "home": "Início",
     "dashboard": "Painel",
-    "settings": "Configurações"
+    "events": "Eventos",
+    "profile": "Perfil",
+    "settings": "Configurações",
+    "primary": "Navegação principal",
+    "breadcrumb": "Trilha de navegação",
+    "collapse": "Recolher barra lateral",
+    "expand": "Expandir barra lateral",
+    "openMenu": "Abrir menu"
   },
   "common": {
     "loading": "Carregando...",
     "save": "Salvar",
+    "saving": "Salvando...",
     "cancel": "Cancelar",
+    "confirm": "Confirmar",
     "search": "Pesquisar",
-    "refresh": "Atualizar"
+    "searchEvents": "Pesquisar eventos...",
+    "clear": "Limpar",
+    "refresh": "Atualizar",
+    "retry": "Tentar novamente",
+    "previous": "Anterior",
+    "next": "Próximo",
+    "pagination": "Paginação",
+    "empty": {
+      "title": "Nada por aqui ainda",
+      "chart": "Sem dados para exibir neste período."
+    },
+    "error": {
+      "title": "Algo deu errado",
+      "message": "Não foi possível carregar este conteúdo. Tente novamente."
+    }
   },
   "language": {
     "label": "Idioma",
@@ -102,5 +125,165 @@
       "networkError": "Erro de rede. Verifique sua conexão e tente novamente.",
       "genericError": "Algo deu errado. Tente novamente."
     }
+  },
+  "dashboard": {
+    "title": "Painel",
+    "subtitle": "Uma visão geral dos seus eventos e do risco climático.",
+    "stats": {
+      "totalEvents": "Total de eventos",
+      "totalEventsHint": "Todos os eventos que você criou.",
+      "upcomingEvents": "Eventos futuros",
+      "upcomingEventsHint": "Eventos programados para começar no futuro.",
+      "criticalEvents": "Eventos críticos",
+      "criticalEventsHint": "Eventos futuros com previsão climática ruim ou perigosa.",
+      "averageTemperature": "Temperatura média",
+      "averageTemperatureHint": "Temperatura atual média dos seus eventos futuros.",
+      "vsLastPeriod": "vs período anterior"
+    },
+    "charts": {
+      "temperature": "Temperatura",
+      "rain": "Chuva",
+      "humidity": "Umidade",
+      "temperatureTitle": "Previsão de temperatura",
+      "rainTitle": "Chuva prevista",
+      "humidityTitle": "Umidade",
+      "riskTitle": "Distribuição de risco climático"
+    },
+    "upcoming": {
+      "title": "Eventos futuros",
+      "viewAll": "Ver todos",
+      "emptyTitle": "Nenhum evento futuro",
+      "emptyDescription": "Crie um evento para vê-lo aqui."
+    }
+  },
+  "events": {
+    "list": {
+      "title": "Eventos",
+      "subtitle": "Navegue, filtre e gerencie todos os seus eventos.",
+      "create": "Novo evento",
+      "searchPlaceholder": "Pesquisar pelo nome do evento...",
+      "emptyTitle": "Nenhum evento encontrado",
+      "emptyDescription": "Ajuste os filtros ou crie um novo evento.",
+      "resultsCount": "Exibindo {from}–{to} de {total}"
+    },
+    "create": {
+      "title": "Criar evento",
+      "subtitle": "Adicione um novo evento e sua localização.",
+      "submit": "Criar evento"
+    },
+    "edit": {
+      "title": "Editar evento",
+      "subtitle": "Atualize os dados deste evento.",
+      "submit": "Salvar alterações"
+    },
+    "detail": {
+      "breadcrumb": "Detalhes",
+      "back": "Voltar para eventos",
+      "summary": "Resumo",
+      "weather": "Clima atual",
+      "forecast": "Previsão",
+      "healthScore": "Índice climático",
+      "recommendations": "Recomendações",
+      "alerts": "Alertas",
+      "points": "pts",
+      "edit": "Editar",
+      "delete": "Excluir",
+      "deleteTitle": "Excluir evento",
+      "deleteConfirm": "Tem certeza de que deseja excluir \"{name}\"? Esta ação não pode ser desfeita."
+    },
+    "fields": {
+      "name": "Nome do evento",
+      "status": "Status",
+      "category": "Categoria",
+      "type": "Tipo",
+      "location": "Local",
+      "city": "Cidade",
+      "country": "País",
+      "latitude": "Latitude",
+      "longitude": "Longitude",
+      "startsAt": "Início",
+      "endsAt": "Término",
+      "timezone": "Fuso horário",
+      "attendees": "Participantes",
+      "description": "Descrição",
+      "isOutdoor": "Este é um evento ao ar livre"
+    },
+    "placeholders": {
+      "category": "Selecione uma categoria",
+      "status": "Selecione um status",
+      "description": "Adicione uma breve descrição..."
+    },
+    "hints": {
+      "country": "Código de país de duas letras (ex.: PT, US)."
+    },
+    "validation": {
+      "categoryRequired": "Selecione uma categoria.",
+      "statusRequired": "Selecione um status.",
+      "nameRequired": "O nome do evento é obrigatório.",
+      "nameMax": "O nome deve ter no máximo 255 caracteres.",
+      "cityRequired": "A cidade é obrigatória.",
+      "countryFormat": "Use um código de país de duas letras.",
+      "latitude": "Informe uma latitude entre -90 e 90.",
+      "longitude": "Informe uma longitude entre -180 e 180.",
+      "startsAtRequired": "A data e hora de início são obrigatórias.",
+      "endsAfterStart": "O término deve ser após o início.",
+      "attendees": "Participantes deve ser um número inteiro positivo."
+    },
+    "status": {
+      "draft": "Rascunho",
+      "published": "Publicado",
+      "cancelled": "Cancelado",
+      "completed": "Concluído"
+    },
+    "rating": {
+      "excellent": "Excelente",
+      "good": "Bom",
+      "fair": "Razoável",
+      "poor": "Ruim",
+      "hazardous": "Perigoso"
+    },
+    "factors": {
+      "temperature": "Temperatura",
+      "wind": "Vento",
+      "precipitation": "Precipitação",
+      "airQuality": "Qualidade do ar"
+    },
+    "filters": {
+      "allCategories": "Todas as categorias",
+      "allStatuses": "Todos os status",
+      "allTypes": "Todos os tipos",
+      "outdoor": "Ao ar livre",
+      "indoor": "Interno",
+      "clear": "Limpar filtros"
+    },
+    "weather": {
+      "feelsLike": "Sensação",
+      "humidity": "Umidade",
+      "wind": "Vento",
+      "pressure": "Pressão",
+      "unavailable": "Os dados climáticos estão indisponíveis no momento."
+    },
+    "forecast": {
+      "empty": "Sem previsão disponível para o período do evento."
+    },
+    "alerts": {
+      "emptyTitle": "Sem alertas",
+      "emptyDescription": "Não há alertas climáticos para este evento."
+    },
+    "toast": {
+      "created": "Evento criado com sucesso.",
+      "createError": "Não foi possível criar o evento.",
+      "updated": "Evento atualizado com sucesso.",
+      "updateError": "Não foi possível atualizar o evento.",
+      "deleted": "Evento excluído.",
+      "deleteError": "Não foi possível excluir o evento."
+    }
+  },
+  "alerts": {
+    "title": "Notificações",
+    "markAllRead": "Marcar todas como lidas",
+    "empty": "Você está em dia.",
+    "generic": "Alerta climático",
+    "unread": "Não lida"
   }
 }
