@@ -1,4 +1,5 @@
 import api from '@/lib/axios'
+import { toQueryParams } from '@/lib/params'
 import type { Alert, AlertListParams } from '@/types/alert'
 import type { Paginated } from '@/types/pagination'
 
@@ -10,7 +11,10 @@ export async function listAlerts(
   params: AlertListParams = {},
   signal?: AbortSignal,
 ): Promise<Paginated<Alert>> {
-  const { data } = await api.get<Paginated<Alert>>('/alerts', { params, signal })
+  const { data } = await api.get<Paginated<Alert>>('/alerts', {
+    params: toQueryParams(params),
+    signal,
+  })
   return data
 }
 

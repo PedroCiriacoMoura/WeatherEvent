@@ -1,4 +1,5 @@
 import api from '@/lib/axios'
+import { toQueryParams } from '@/lib/params'
 import type { Event, EventListParams, EventPayload } from '@/types/event'
 import type { Paginated } from '@/types/pagination'
 
@@ -10,7 +11,10 @@ export async function listEvents(
   params: EventListParams = {},
   signal?: AbortSignal,
 ): Promise<Paginated<Event>> {
-  const { data } = await api.get<Paginated<Event>>('/events', { params, signal })
+  const { data } = await api.get<Paginated<Event>>('/events', {
+    params: toQueryParams(params),
+    signal,
+  })
   return data
 }
 
